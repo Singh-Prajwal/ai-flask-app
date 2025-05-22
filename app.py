@@ -25,7 +25,8 @@ def extract_name_skill_using_ai(text):
     
     client = OpenAI(
         base_url="https://openrouter.ai/api/v1",
-        api_key=os.getenv("OPENAI_API_KEY"),
+        # api_key=os.getenv("OPENAI_API_KEY"),
+        api_key= "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"
     )
 
 
@@ -35,7 +36,7 @@ def extract_name_skill_using_ai(text):
         messages=[
             {
                 "role": "user",
-                "content": f"From the resume text below, extract only: - 'name' (full name) - 'skills': a list of web development skills, including: - Languages (e.g., JavaScript, Python) - Frontend (e.g., React, Next.js) - Backend (e.g., Node.js, Flask) - Databases (e.g., PostgreSQL, MongoDB) - Tools (e.g., Git, Postman, AWS) - Other web tech (e.g., REST APIs, CI/CD) Ignore mobile, AI/ML, payment gateways, soft skills. **Respond ONLY in this strict JSON format:** name and skills as an array, Resume Text: {text}"
+                "content": f"From the resume text below, extract only: - 'name' (full name) - 'skills': a list of web development skills, including: - Languages (e.g., JavaScript, Python) - Frontend (e.g., React, Next.js) - Backend (e.g., Node.js, Flask) - Databases (e.g., PostgreSQL, MongoDB) - Tools (e.g., Git, Postman, AWS) - Other web tech (e.g., REST APIs, CI/CD) Ignore mobile, AI/ML, payment gateways, soft skills. **Respond ONLY in this strict JSON format nothing extra:** name and skills as an array only not extra key other things, Resume Text: {text}"
             }
         ]
     )
