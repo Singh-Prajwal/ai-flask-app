@@ -1,9 +1,10 @@
 services:
   - type: web
-    name: resume-extractor-api
+    name: flask-web-service
     env: python
-    buildCommand: pip install -r requirements.txt
+    plan: free
+    buildCommand: ""
     startCommand: gunicorn app:app
     envVars:
-      - key: OPENAI_API_KEY
-        sync: false  
+      - key: FLASK_ENV
+        value: production
