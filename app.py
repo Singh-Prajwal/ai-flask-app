@@ -25,7 +25,8 @@ def extract_name_skill_using_ai(text):
     
     client = OpenAI(
         base_url="https://openrouter.ai/api/v1",
-        api_key=os.getenv("OPENAI_API_KEY"),
+        api_key=os.getenv("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"),
+        # api_key=os.getenv("OPENAI_API_KEY"),
     )
 
 
