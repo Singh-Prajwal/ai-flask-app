@@ -23,6 +23,12 @@ def clean_json_output(output):
 def extract_name_skill_using_ai(text):
     print("Inside extract_name_skill_using_ai")
     
+    
+    api_key = os.getenv("OPENAI_API_KEY")
+    if not api_key:
+        raise ValueError("API Key not found in environment variables!")
+    print("API Key Loaded:", api_key[:10] + "..." if api_key else "None")
+    
     client = OpenAI(
         base_url="https://openrouter.ai/api/v1",
         api_key=os.getenv("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"),
